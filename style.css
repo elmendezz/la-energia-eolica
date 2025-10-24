@@ -1,0 +1,475 @@
+:root {
+    --color-background: #131314;
+    --color-surface: #202124;
+    --color-primary: #8ab4f8;
+    --color-primary-light: #c5d9f8;
+    --color-text-primary: #e8eaed;
+    --color-text-secondary: #bdc1c6;
+    --color-accent: #fbbc05;
+    --font-main: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    user-select: none;
+}
+
+.main-header {
+    background-color: rgba(32, 33, 36, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+    border-bottom: 1px solid #3c4043;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-svg {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.main-nav a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+.main-nav a.active-nav {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+#aspas {
+    transition: animation-duration 1s ease-out;
+    animation: spin 5s linear infinite;
+}
+
+.logo-container:hover #aspas {
+    animation-duration: 1s;
+}
+
+#bombilla-luz {
+    animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    background: radial-gradient(circle, #202124 0%, var(--color-background) 70%);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-primary-light);
+    text-shadow: 0 0 10px rgba(138, 180, 248, 0.5);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-3px);
+}
+
+.content-section {
+    padding: 6rem 10%;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    text-shadow: 0 0 8px rgba(138, 180, 248, 0.3);
+    margin-bottom: 2rem;
+}
+
+.content-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+}
+
+.dark-section {
+    background-color: var(--color-surface);
+}
+
+.project-illustration-container {
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+.project-svg {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+}
+
+#led-light {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.project-illustration-container.active #led-light {
+    opacity: 1;
+}
+
+#project-blades {
+    transform-origin: 50px 55px;
+}
+
+.project-illustration-container.active #project-blades {
+    animation: spin 8s linear infinite;
+}
+
+.project-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-cta-button {
+    margin-top: 1.4rem;
+    display: inline-block;
+}
+
+/* Estilo específico para el botón "¿Cómo Funciona?" */
+.how-it-works-button {
+    padding: 8px 18px; /* Lo hace más pequeño */
+    font-size: 0.9rem; /* Reduce el tamaño del texto */
+    margin-top: 0.3rem; /* Ajusta el espacio superior */
+}
+
+.dashboard-container {
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #3c4043;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 3rem auto; /* Centra el dashboard y le da espacio */
+}
+
+.dashboard-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-metrics {
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.metric-card {
+    background-color: var(--color-background);
+    border: 1px solid #3c4043;
+    border-radius: 8px;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.metric-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-primary);
+}
+
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-primary-light);
+    display: block;
+    line-height: 1.1;
+}
+
+.demo-image-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.demo-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-primary);
+    max-height: 60vh;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step {
+    background-color: var(--color-background);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #3c4043;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    /* Se combinan las transiciones de hover y de la animación de entrada */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, opacity 0.6s ease-out;
+    
+    /* Estado inicial para la animación de entrada */
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* Estado final cuando la tarjeta es visible */
+.step.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    border-color: var(--color-primary);
+}
+/* Retrasos para la animación secuencial */
+.step:nth-child(2) { transition-delay: 0.2s; }
+.step:nth-child(3) { transition-delay: 0.4s; }
+.step-icon {
+    width: 60px;
+    height: 60px;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
+
+.step h3 {
+    color: var(--color-primary-light);
+    margin-bottom: 0.5rem;
+}
+
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.material-item {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #3c4043;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.material-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.material-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.material-item h3 {
+    color: var(--color-primary-light);
+    margin-bottom: 0.5rem;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-surface);
+    border-top: 1px solid #3c4043;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+.main-footer.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.animate-on-load {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .main-nav {
+        margin-top: 1rem;
+    }
+
+    .main-nav a {
+        margin: 0 0.8rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .steps-container {
+        flex-direction: column;
+    }
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+#main-content.hidden {
+    opacity: 0;
+    pointer-events: none; /* Evita interacciones con el contenido oculto */
+}
+#main-content {
+    transition: opacity 1s ease-in-out;
+}
